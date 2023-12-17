@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>VJ game</title>
+<link rel="icon" href="joystick.jpg"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body style="text-align:center">
+
+<p id="header"> Let's play.</p>
+<img src="joystick.jpg"/>
+<p id="rule"> About Game </p>
+<p id="para"> It's a fun game where you choose a number between 1 and 10. If your chosen number matches the computer-generated number, you earn one point. If your guess is not equal to the computer-generated number, a message will be displayed saying 'Sorry, wrong guess other wise it throw wow ! you are correct.'"
+
+<div class="vj">
+<h1>MEMORY GAME </h1>
+<p id="pp">choose the number between 1 to 10 </p>
+<input type="number" id="inp"><br>
+<br>
+<button onclick= "checked()">check</button>
+<p id="answer"></p>
+<h2 id="total">Score : 0</h2>
+</div>
+</body>
+<script>
+var num=document.getElementById("inp")
+var ans=document.getElementById("answer")
+var tot=document.getElementById("total")
+var score=0
+/*the FLOOR funcion return without point value ex:7.890323434 its only return 7
+ the RANDOM function generate 0.0 to 0.9 values 
+ if the random fuction give 0.536 * 10 =5.36 floor return 5
+*/
+function checked()
+{
+ var random=Math.floor(Math.random()*10)+1
+ var no=num.value
+ if(random == no)
+ {
+    ans.textContent="wow ! you are correct "
+	score=score+1
+	tot.textContent="Score :"+score 
+ }
+ else
+ {
+    ans.textContent="Sorry Wrong guess "
+ }
+}
+</script>
+</html>
